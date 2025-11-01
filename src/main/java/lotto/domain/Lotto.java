@@ -17,6 +17,18 @@ public class Lotto {
                 .toList();
     }
 
+    // TODO: 정렬하고 순차 비교로 변경
+    public int getMatchCount(List<LottoNumber> winningNumbers) {
+        Set<LottoNumber> lottoNumbersSet = new HashSet<>(numbers);
+        lottoNumbersSet.retainAll(winningNumbers);
+        return lottoNumbersSet.size();
+    }
+
+    // TODO: 객체 값을 검사하는지 확인 필요
+    public boolean contains(LottoNumber bonusNumber) {
+        return numbers.contains(bonusNumber);
+    }
+
     private void validateSize(List<Integer> numbers) {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");
