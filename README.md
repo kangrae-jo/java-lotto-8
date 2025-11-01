@@ -60,10 +60,10 @@
 
 - [x] 로또(`Lotto`)는 6개의 숫자(`Lotto Number`)를 가진다.
     - [x] 로또 번호(`Lotto Number`)의 숫자 범위는 1~45까지이다.
-    - [ ] 1개의 로또(`Lotto`)를 발행할 때 중복되지 않는 6개의 숫자(`Lotto Number`)를 뽑는다.
+    - [x] 1개의 로또(`Lotto`)를 발행할 때 중복되지 않는 6개의 숫자(`Lotto Number`)를 뽑는다.
 
 - [ ] 로또(`Lotto`)는 당첨(`Winning`)될 수 있다.
-    - [ ] 당첨 번호(`Winning Number`) 추첨 시 중복되지 않는 숫자 6개와 보너스 번호(`Bonus Number`) 1개를 뽑는다.
+    - [x] 당첨 번호(`Winning Number`) 추첨 시 중복되지 않는 숫자 6개와 보너스 번호(`Bonus Number`) 1개를 뽑는다.
     - [ ] 당첨 결과(`Winning Statistics`)는 1등부터 5등까지의 순위를 포함한다.
     - [x] 당첨(`Winning`) 기준과 상금 금액(`Money`)은 아래와 같다.
         - 1등(`First Rank`): 6개 번호(`Winning Number`) 일치 / 2,000,000,000원
@@ -77,9 +77,9 @@
     - [x] 로또(`Lotto`) 구입 금액(`Price`)을 입력하면, 구입 금액(`Price`)에 해당하는 만큼 로또(`Lotto`)를 발행한다.
     - [x] 로또(`Lotto`) 1장의 가격은 1,000원이다.
 
-- [ ] 로또 당첨(`Winning`) 기준이 되는 번호들을 입력받는다.
-    - [ ] 당첨 번호(`Winning Number`)를 입력받는다.
-    - [ ] 보너스 번호(`Bonus Number`)를 입력받는다.
+- [x] 로또 당첨(`Winning`) 기준이 되는 번호들을 입력받는다.
+    - [x] 당첨 번호(`Winning Number`)를 입력받는다.
+    - [x] 보너스 번호(`Bonus Number`)를 입력받는다.
 
 - [ ] 당첨 결과(`Winning Statistics`)를 출력한다.
     - [ ] 사용자가 구매한 로또 번호(`Lotto Number`)와 당첨 번호(`Winning Number`)를 비교하여,
