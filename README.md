@@ -47,14 +47,15 @@
 
 ## 도메인
 
-| 도메인            | 설명                                                     |
-|----------------|--------------------------------------------------------|
-| Lotto          | 6개의 LottoNumber를 가지는 로또                                |
-| LottoNumber    | Lotto가 가지는 숫자 (1부터 45사이의 숫자)                           |
-| LottoMachine   | 입력된 금액만큼 수량을 계산하여 그 수량만큼의 로또를 발행하는 객체                  |
-| Cashier        | 사용자가 지불한 금액을 받아, 해당 금액에 맞는 수량의 로또를 구매하는 객체             |
-| Rank           | Lotto의 번호와 Winning Number를 비교하여 결정되는 당첨 순위             |
-| WinningNumbers | 6개의 LottoNumber와 1개의 BonusNumber를 같이 가지고 있으며 당첨의 기준이 됨 |
+| 도메인               | 설명                                                     |
+|-------------------|--------------------------------------------------------|
+| Lotto             | 6개의 LottoNumber를 가지는 로또                                |
+| LottoNumber       | Lotto가 가지는 숫자 (1부터 45사이의 숫자)                           |
+| LottoMachine      | 입력된 금액만큼 수량을 계산하여 그 수량만큼의 로또를 발행하는 객체                  |
+| Cashier           | 사용자가 지불한 금액을 받아, 해당 금액에 맞는 수량의 로또를 구매하는 객체             |
+| Rank              | Lotto의 번호와 Winning Number를 비교하여 결정되는 당첨 순위             |
+| WinningNumbers    | 6개의 LottoNumber와 1개의 BonusNumber를 같이 가지고 있으며 당첨의 기준이 됨 |
+| WinningStatistics | 순위별 당첨 개수 정보를 가지는 당첨 통계 전송 객체                          |
 
 ## 기능 요구 사항
 
@@ -62,9 +63,9 @@
     - [x] 로또 번호(`Lotto Number`)의 숫자 범위는 1~45까지이다.
     - [x] 1개의 로또(`Lotto`)를 발행할 때 중복되지 않는 6개의 숫자(`Lotto Number`)를 뽑는다.
 
-- [ ] 로또(`Lotto`)는 당첨(`Winning`)될 수 있다.
+- [x] 로또(`Lotto`)는 당첨(`Winning`)될 수 있다.
     - [x] 당첨 번호(`Winning Number`) 추첨 시 중복되지 않는 숫자 6개와 보너스 번호(`Bonus Number`) 1개를 뽑는다.
-    - [ ] 당첨 결과(`Winning Statistics`)는 1등부터 5등까지의 순위를 포함한다.
+    - [x] 당첨 결과(`Winning Statistics`)는 1등부터 5등까지의 순위를 포함한다.
     - [x] 당첨(`Winning`) 기준과 상금 금액(`Money`)은 아래와 같다.
         - 1등(`First Rank`): 6개 번호(`Winning Number`) 일치 / 2,000,000,000원
         - 2등(`Second Rank`): 5개 번호(`Winning Number`) + 보너스 번호 일치 / 30,000,000원
