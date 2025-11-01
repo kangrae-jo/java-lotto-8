@@ -1,5 +1,7 @@
 package lotto.domain;
 
+import java.util.List;
+
 public class Cashier {
 
     private final static int LOTTO_PRICE = 1_000;
@@ -7,11 +9,18 @@ public class Cashier {
     private final static int MAX_PURCHASE_AMOUNT = 10_000;
 
     private final int money;
+    private final LottoMachine lottoMachine;
 
-    public Cashier(int money) {
+    public Cashier(int money, LottoMachine lottoMachine) {
         validatePurchaseRange(money);
         validateAmountUnit(money);
         this.money = money;
+        this.lottoMachine = lottoMachine;
+    }
+
+    public List<Lotto> purchaseLottos() {
+        int amount = lottoMachine.calculateLottoAmount(money);
+        return lottoMachine.generateLottos(amount);
     }
 
     public int getLottoAmount() {
