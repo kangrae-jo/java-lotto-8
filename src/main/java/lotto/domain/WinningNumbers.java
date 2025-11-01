@@ -3,7 +3,10 @@ package lotto.domain;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
+import lotto.domain.dto.WinningStatistics;
 
 public class WinningNumbers {
 
@@ -25,6 +28,23 @@ public class WinningNumbers {
                 .map(LottoNumber::new)
                 .toList();
         this.bonusNumber = new LottoNumber(bonusNumber);
+    }
+
+    // WinningNumbers를 기준으로 List<Lotto>를 평가하고,
+    //  각 Rank별 당첨 개수를 계산하여 WinningStatistics로 변환한다.
+    public WinningStatistics evaluateLottos(List<Lotto> lottos) {
+        Map<Rank, Long> statistics = lottos.stream()
+                .map(this::calculateRank)
+                .collect(Collectors.groupingBy(rank -> rank, Collectors.counting()));
+
+        return new WinningStatistics(statistics);
+    }
+
+    private Rank calculateRank(Lotto lotto) {
+        int matchCount = lotto.getMatchCount(numbers);
+        boolean matchBonus = lotto.contains(bonusNumber);
+
+        return Rank.of(matchCount, matchBonus);
     }
 
     private void validateSize(List<Integer> numbers) {
