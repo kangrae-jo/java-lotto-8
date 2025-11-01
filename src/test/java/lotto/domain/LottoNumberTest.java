@@ -9,7 +9,7 @@ class LottoNumberTest {
 
     @ParameterizedTest
     @ValueSource(ints = {0, 46})
-    void Lotto_Number는_1부터_45사이의_숫자이다(int number) {
+    void LottoNumber가_1부터_45사이의_숫자가_아니면_오류를_일으킨다(int number) {
         assertThatThrownBy(() -> new LottoNumber(number))
                 .isInstanceOf(IllegalArgumentException.class);
     }
