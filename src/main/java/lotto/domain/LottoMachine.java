@@ -11,6 +11,12 @@ public class LottoMachine {
     public LottoMachine() {
     }
 
+    public void validateAmountUnit(int money) {
+        if (money % LOTTO_PRICE != 0) {
+            throw new IllegalArgumentException("[ERROR] 1,000원 단위로만 구매할 수 있습니다.");
+        }
+    }
+
     public int calculateLottoAmount(int money) {
         return money / LOTTO_PRICE;
     }
