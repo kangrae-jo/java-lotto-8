@@ -1,14 +1,9 @@
 package lotto.domain;
 
-import java.util.Objects;
+public record LottoNumber(int number) {
 
-public class LottoNumber {
-
-    private final int number;
-
-    public LottoNumber(int number) {
+    public LottoNumber {
         validateLottoNumber(number);
-        this.number = number;
     }
 
     public int value() {
@@ -30,11 +25,6 @@ public class LottoNumber {
             return false;
         }
         return number == that.number;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(number);
     }
 
 }
