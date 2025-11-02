@@ -65,6 +65,7 @@
 - [x] 로또(`Lotto`)는 6개의 숫자(`Lotto Number`)를 가진다.
     - [x] 로또 번호(`Lotto Number`)의 숫자 범위는 1~45까지이다.
     - [x] 1개의 로또(`Lotto`)를 발행할 때 중복되지 않는 6개의 숫자(`Lotto Number`)를 뽑는다.
+    - [x] 발행된 로또(`Lotto`)는 오름차순으로 출력한다.
 
 - [x] 로또(`Lotto`)는 당첨(`Winning`)될 수 있다.
     - [x] 당첨 번호(`Winning Number`) 추첨 시 중복되지 않는 숫자 6개와 보너스 번호(`Bonus Number`) 1개를 뽑는다.

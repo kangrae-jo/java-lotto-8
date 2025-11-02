@@ -13,14 +13,15 @@ public class LottoNumbers {
         validateUnique(numbers);
 
         this.numbers = numbers.stream()
+                .sorted()
                 .map(LottoNumber::new)
                 .toList();
     }
 
-    // TODO: 정렬하고 순차 비교로 변경
     public int getMatchCount(LottoNumbers other) {
         Set<LottoNumber> set = new HashSet<>(numbers);
         set.retainAll(other.numbers);
+
         return set.size();
     }
 
