@@ -28,6 +28,12 @@ public class Lotto {
         return numbers.contains(bonusNumber);
     }
 
+    public List<Integer> extractNumbers() {
+        return numbers.stream()
+                .map(LottoNumber::value)
+                .toList();
+    }
+
     private void validateSize(List<Integer> numbers) {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");

@@ -4,11 +4,15 @@ import java.util.Objects;
 
 public class LottoNumber {
 
-    private int number;
+    private final int number;
 
     public LottoNumber(int number) {
         validateLottoNumber(number);
         this.number = number;
+    }
+
+    public int value() {
+        return number;
     }
 
     private void validateLottoNumber(int number) {
