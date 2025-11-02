@@ -12,8 +12,7 @@ public class Cashier {
     }
 
     public List<Lotto> issueLottos(Ticket ticket) {
-        int amount = LottoMachine.calculateLottoAmount(ticket.money());
-        return LottoMachine.generateLottos(amount);
+        return LottoMachine.generateLottos(ticket);
     }
 
 }
