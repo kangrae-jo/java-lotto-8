@@ -1,9 +1,8 @@
 package lotto.view;
 
 import java.util.List;
-import java.util.Map;
-import lotto.domain.Rank;
 import lotto.domain.dto.LottoNumbersDto;
+import lotto.domain.dto.RankResult;
 import lotto.domain.dto.WinningStatistics;
 
 public class OutputView {
@@ -35,18 +34,14 @@ public class OutputView {
                 .forEach(System.out::println);
     }
 
-    // TODO: Rank를 알아도 괜찮은가?
     public static void printWinningStatistics(WinningStatistics winningStatistics) {
         System.out.println();
         System.out.println("당첨 통계");
         System.out.println("---");
 
-        Map<Rank, Long> results = winningStatistics.results();
-        for (Rank rank : Rank.values()) {
-            if (rank == Rank.NONE) {
-                continue;
-            }
-            printRankResult(rank, results);
+        List<RankResult> rankResults = winningStatistics.toRankResults();
+        for (RankResult result : rankResults) {
+            System.out.println(result.formatForPrint());
         }
     }
 
@@ -56,21 +51,6 @@ public class OutputView {
 
     public static void printErrorMessage(String message) {
         System.out.println(message);
-    }
-
-    private static void printRankResult(Rank rank, Map<Rank, Long> results) {
-        long count = results.getOrDefault(rank, 0L);
-        String bonusText = "";
-        if (rank.hasBonus()) {
-            bonusText = ", 보너스 볼 일치";
-        }
-
-        System.out.printf("%d개 일치%s (%,d원) - %d개%n",
-                rank.getMatchCount(),
-                bonusText,
-                rank.getPrize(),
-                count
-        );
     }
 
 }
