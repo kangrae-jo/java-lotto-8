@@ -1,8 +1,10 @@
-package lotto.domain;
+package lotto.util;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
 import java.util.stream.Stream;
+import lotto.domain.Lotto;
+import lotto.domain.Ticket;
 
 public class LottoMachine {
 

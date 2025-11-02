@@ -1,6 +1,7 @@
 package lotto.domain;
 
 import java.util.List;
+import lotto.util.LottoMachine;
 
 public class Cashier {
 

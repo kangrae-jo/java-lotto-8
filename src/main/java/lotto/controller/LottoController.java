@@ -8,7 +8,7 @@ import lotto.domain.Ticket;
 import lotto.domain.WinningNumbers;
 import lotto.domain.dto.LottoNumbersDto;
 import lotto.domain.dto.WinningStatistics;
-import lotto.utill.InputParser;
+import lotto.util.InputParser;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 
