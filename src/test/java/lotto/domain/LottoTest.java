@@ -18,7 +18,7 @@ class LottoTest {
     }
 
     @Test
-    void 로또_번호에_보너스_번호가_포함되면_true_반환() {
+    void 로또_번호에_보너스_번호가_포함되면_true를_반환한다() {
         Lotto lotto = new Lotto(new LottoNumbers(List.of(1, 2, 3, 4, 5, 6)));
         LottoNumber bonus = new LottoNumber(5);
 
@@ -28,7 +28,7 @@ class LottoTest {
     }
 
     @Test
-    void 로또_번호에_보너스_번호가_포함되지_않으면_false_반환() {
+    void 로또_번호에_보너스_번호가_포함되지_않으면_false를_반환한다() {
         Lotto lotto = new Lotto(new LottoNumbers(List.of(1, 2, 3, 4, 5, 6)));
         LottoNumber bonus = new LottoNumber(10);
 
