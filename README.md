@@ -50,14 +50,15 @@
 
 | 도메인               | 설명                                                       |
 |-------------------|----------------------------------------------------------|
+| Cashier           | 사용자가 지불한 금액을 받고, LottoMachine을 통해 금액에 맞는 수량의 로또를 구매하는 객체 |
 | Lotto             | 6개의 LottoNumber를 가지는 로또                                  |
 | LottoNumber       | Lotto가 가지는 숫자 (1부터 45사이의 숫자)                             |
-| LottoMachine      | 입력된 금액만큼 수량을 계산하여 그 수량만큼의 로또를 발행하는 객체                    |
-| Cashier           | 사용자가 지불한 금액을 받고, LottoMachine을 통해 금액에 맞는 수량의 로또를 구매하는 객체 |
 | Rank              | Lotto의 번호와 Winning Number를 비교하여 결정되는 당첨 순위               |
+| Ticket            | 값 객체이며 Lotto Machine에게 전달하고 Lotto를 받아올 수 있는 돈을 담는 값 객체   |
 | WinningNumbers    | 6개의 LottoNumber와 1개의 BonusNumber를 같이 가지고 있으며 당첨의 기준이 됨   |
 | WinningStatistics | 순위별 당첨 개수 정보를 가지는 당첨 통계 전송 객체                            |
-| Ticket            | 값 객체이며 Lotto Machine에게 전달하고 Lotto를 받아올 수 있는 돈을 담는 값 객체   |
+| LottoMachine      | 입력된 금액만큼 수량을 계산하여 그 수량만큼의 로또를 발행하는 객체                    |
+| InputParser       | 파싱 등 기초적인 유효성 검증을 하는 유틸 객체                               |
 
 ## 기능 요구 사항
 
