@@ -47,6 +47,16 @@ public class WinningNumbers {
         return Rank.of(matchCount, matchBonus);
     }
 
+    // TODO: 이 로직 WinningNumbers가 알고있는건 별로인 듯하여 분리 예정
+    public double calculateYield(WinningStatistics winningStatistics, int money) {
+        Map<Rank, Long> results = winningStatistics.results();
+        long totalPrize = results.entrySet().stream()
+                .mapToLong(entry -> entry.getKey().getPrize() * entry.getValue())
+                .sum();
+
+        return (double) totalPrize / money * 100;
+    }
+
     private void validateSize(List<Integer> numbers) {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");
