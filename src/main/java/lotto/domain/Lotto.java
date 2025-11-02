@@ -24,7 +24,6 @@ public class Lotto {
         return lottoNumbersSet.size();
     }
 
-    // TODO: 객체 값을 검사하는지 확인 필요
     public boolean contains(LottoNumber bonusNumber) {
         return numbers.contains(bonusNumber);
     }

@@ -24,7 +24,6 @@ public class OutputView {
 
     // TODO: Rank를 알아도 괜찮은가?
     // TODO: 3항 연산자 지양
-    // TODO: 수익률 계산 및 출력
     public static void printWinningStatistics(WinningStatistics winningStatistics) {
         System.out.println("당첨 통계");
         System.out.println("---");
