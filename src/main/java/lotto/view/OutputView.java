@@ -8,7 +8,6 @@ import lotto.domain.dto.WinningStatistics;
 
 public class OutputView {
 
-    // TODO: static 고민
     private OutputView() {
     }
 
@@ -37,7 +36,6 @@ public class OutputView {
     }
 
     // TODO: Rank를 알아도 괜찮은가?
-    // TODO: 3항 연산자 지양
     public static void printWinningStatistics(WinningStatistics winningStatistics) {
         System.out.println();
         System.out.println("당첨 통계");
@@ -48,13 +46,7 @@ public class OutputView {
             if (rank == Rank.NONE) {
                 continue;
             }
-            long count = results.getOrDefault(rank, 0L);
-            System.out.printf("%d개 일치%s (%,d원) - %d개%n",
-                    rank.getMatchCount(),
-                    rank.hasBonus() ? ", 보너스 볼 일치" : "",
-                    rank.getPrize(),
-                    count
-            );
+            printRankResult(rank, results);
         }
     }
 
@@ -64,6 +56,21 @@ public class OutputView {
 
     public static void printErrorMessage(String message) {
         System.out.println(message);
+    }
+
+    private static void printRankResult(Rank rank, Map<Rank, Long> results) {
+        long count = results.getOrDefault(rank, 0L);
+        String bonusText = "";
+        if (rank.hasBonus()) {
+            bonusText = ", 보너스 볼 일치";
+        }
+
+        System.out.printf("%d개 일치%s (%,d원) - %d개%n",
+                rank.getMatchCount(),
+                bonusText,
+                rank.getPrize(),
+                count
+        );
     }
 
 }
