@@ -78,7 +78,7 @@ public class LottoController {
         WinningStatistics statistics = winnings.evaluateLottos(lottos);
         OutputView.printWinningStatistics(statistics);
 
-        double yield = winnings.calculateYield(statistics, money);
+        double yield = statistics.calculateYield(money);
         OutputView.printYield(yield);
     }
 

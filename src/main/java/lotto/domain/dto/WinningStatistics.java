@@ -7,6 +7,14 @@ import lotto.domain.Rank;
 
 public record WinningStatistics(Map<Rank, Long> results) {
 
+    public double calculateYield(int money) {
+        long totalPrize = results.entrySet().stream()
+                .mapToLong(entry -> entry.getKey().getPrize() * entry.getValue())
+                .sum();
+
+        return (double) totalPrize / money * 100;
+    }
+
     public List<RankResult> toRankResults() {
         return Arrays.stream(Rank.values())
                 .filter(rank -> rank != Rank.NONE)

@@ -35,17 +35,6 @@ public class WinningNumbers {
         return Rank.of(matchCount, matchBonus);
     }
 
-    // TODO: 이 로직 WinningNumbers가 알고있는건 별로인 듯하여 분리 예정
-    @Deprecated
-    public double calculateYield(WinningStatistics winningStatistics, int money) {
-        Map<Rank, Long> results = winningStatistics.results();
-        long totalPrize = results.entrySet().stream()
-                .mapToLong(entry -> entry.getKey().getPrize() * entry.getValue())
-                .sum();
-
-        return (double) totalPrize / money * 100;
-    }
-
     private void validateUniqueBonus(LottoNumbers numbers, LottoNumber bonusNumber) {
         if (numbers.contains(bonusNumber)) {
             throw new IllegalArgumentException("[ERROR] 보너스 번호는 당첨 번호와 중복될 수 없습니다.");
