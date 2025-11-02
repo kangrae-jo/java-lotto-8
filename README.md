@@ -82,11 +82,11 @@
     - [x] 당첨 번호(`Winning Number`)를 입력받는다.
     - [x] 보너스 번호(`Bonus Number`)를 입력받는다.
 
-- [ ] 당첨 결과(`Winning Statistics`)를 출력한다.
+- [x] 당첨 결과(`Winning Statistics`)를 출력한다.
     - [x] 사용자가 구매한 로또 번호(`Lotto Number`)와 당첨 번호(`Winning Number`)를 비교한다.
     - [x] 당첨 내역(`Winning Statistics`)을 출력한다.
-    - [ ] 수익률(`Yield`)을 출력한다.
-    - [ ] 출력이 끝나면 로또 게임을 종료한다.
+    - [x] 수익률(`Yield`)을 출력한다.
+    - [x] 출력이 끝나면 로또 게임을 종료한다.
 
 - [ ] 사용자가 잘못된 값을 입력할 경우 `IllegalArgumentException`을 발생시킨다.
     - [ ] "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 입력을 다시 받는다.
