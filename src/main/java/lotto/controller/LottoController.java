@@ -3,7 +3,7 @@ package lotto.controller;
 import java.util.List;
 import lotto.domain.Cashier;
 import lotto.domain.Lotto;
-import lotto.domain.LottoMachine;
+import lotto.domain.Ticket;
 import lotto.domain.WinningNumbers;
 import lotto.domain.dto.LottoNumbersDto;
 import lotto.domain.dto.WinningStatistics;
@@ -11,21 +11,11 @@ import lotto.view.OutputView;
 
 public class LottoController {
 
-    private final LottoMachine lottoMachine;
+    public List<Lotto> purchaseLottos(Cashier cashier, int money) {
+        Ticket ticket = cashier.makeTicket(money);
+        List<Lotto> lottos = cashier.issueLottos(ticket);
 
-    public LottoController(LottoMachine lottoMachine) {
-        this.lottoMachine = lottoMachine;
-    }
-
-    public List<Lotto> purchaseLottos(int money) {
-        Cashier cashier = makeCashier(money);
-        List<Lotto> lottos = cashier.purchaseLottos();
-
-        List<LottoNumbersDto> lottoNumbersDtos = lottos.stream()
-                .map(lotto -> new LottoNumbersDto(lotto.extractNumbers()))
-                .toList();
-
-        OutputView.printLottoNumbers(lottoNumbersDtos);
+        printLottos(lottos);
 
         return lottos;
     }
@@ -42,9 +32,11 @@ public class LottoController {
         OutputView.printYield(yield);
     }
 
-    // TODO: Cashier 내부 팩토리 메서드로 분리
-    private Cashier makeCashier(int money) {
-        return new Cashier(money, lottoMachine);
+    private void printLottos(List<Lotto> lottos) {
+        List<LottoNumbersDto> lottoNumbersDtos = lottos.stream()
+                .map(lotto -> new LottoNumbersDto(lotto.extractNumbers()))
+                .toList();
+        OutputView.printLottoNumbers(lottoNumbersDtos);
     }
 
 }
