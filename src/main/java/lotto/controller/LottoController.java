@@ -6,6 +6,7 @@ import lotto.domain.Lotto;
 import lotto.domain.LottoMachine;
 import lotto.domain.WinningNumbers;
 import lotto.domain.dto.LottoNumbersDto;
+import lotto.domain.dto.WinningStatistics;
 import lotto.view.OutputView;
 
 public class LottoController {
@@ -31,6 +32,14 @@ public class LottoController {
 
     public WinningNumbers makeWinningNumbers(List<Integer> numbers, int bonusNumber) {
         return new WinningNumbers(numbers, bonusNumber);
+    }
+
+    public void printResult(List<Lotto> lottos, WinningNumbers winnings, int money) {
+        WinningStatistics winningStatistics = winnings.evaluateLottos(lottos);
+        OutputView.printWinningStatistics(winningStatistics);
+
+        double yield = winnings.calculateYield(winningStatistics, money);
+        OutputView.printYield(yield);
     }
 
     // TODO: Cashier 내부 팩토리 메서드로 분리

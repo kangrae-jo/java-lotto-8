@@ -48,6 +48,7 @@ public class WinningNumbers {
     }
 
     // TODO: 이 로직 WinningNumbers가 알고있는건 별로인 듯하여 분리 예정
+    @Deprecated
     public double calculateYield(WinningStatistics winningStatistics, int money) {
         Map<Rank, Long> results = winningStatistics.results();
         long totalPrize = results.entrySet().stream()
