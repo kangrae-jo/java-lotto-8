@@ -20,9 +20,7 @@ public class LottoController {
         this.inputView = inputView;
     }
 
-    public void run() {
-        Cashier cashier = new Cashier();
-
+    public void run(Cashier cashier) {
         // 구임 금액 입력 받기
         Ticket ticket = retryUntilValid(() -> readAndCreateTicket());
 
