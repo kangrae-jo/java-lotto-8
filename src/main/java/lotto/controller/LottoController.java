@@ -30,7 +30,7 @@ public class LottoController {
         List<Lotto> lottos = cashier.issueLottos(ticket);
         printLottos(lottos);
 
-        // 당첨 번호, 보너스 번호 입
+        // 당첨 번호, 보너스 번호 입력
         WinningNumbers winningNumbers = readWinningNumbersWithRetry();
 
         // 결과 출력
