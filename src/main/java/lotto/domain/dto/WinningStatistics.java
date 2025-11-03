@@ -9,7 +9,7 @@ public record WinningStatistics(Map<Rank, Long> results) {
 
     public double calculateYield(int money) {
         long totalPrize = results.entrySet().stream()
-                .mapToLong(entry -> entry.getKey().getPrize() * entry.getValue())
+                .mapToLong(entry -> entry.getKey().calculateTotalPrize(entry.getValue()))
                 .sum();
 
         return (double) totalPrize / money * 100;

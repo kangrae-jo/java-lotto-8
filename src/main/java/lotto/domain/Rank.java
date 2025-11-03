@@ -38,6 +38,10 @@ public enum Rank {
         return NONE;
     }
 
+    public long calculateTotalPrize(long count) {
+        return prize * count;
+    }
+
     public int getMatchCount() {
         return matchCount;
     }
