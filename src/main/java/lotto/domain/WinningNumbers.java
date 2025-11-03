@@ -7,8 +7,6 @@ import lotto.domain.dto.WinningStatistics;
 
 public class WinningNumbers {
 
-    // TODO: 용어 정리 필요
-    //  당첨 숫자 == 당첨 번호 + 보너스 번호
     private final LottoNumbers numbers;
     private final LottoNumber bonusNumber;
 

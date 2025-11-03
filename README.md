@@ -23,13 +23,13 @@
 
 ### 당첨
 
-| 용어                 | 설명                                     |
-|--------------------|----------------------------------------|
-| Winning            | 당첨을 뜻하는 용어                             |
-| Winning Number     | 로또와 동일한 형태의 숫자 집합으로, 당첨 순위를 결정하는 기준이 됨 |
-| Bonus Number       | 당첨 번호와 별개로, 2등을 결정하는 보너스 번호            |
-| Winning Statistics | 1등부터 5등까지 각 등수별 당첨 개수를 집계한 결과          |
-| Yield              | 수익률 (로또 구매 비용과 당첨 상금을 비교하여 산출되는 정보)    |
+| 용어                 | 설명                                            |
+|--------------------|-----------------------------------------------|
+| Winning            | 당첨을 뜻하는 용어                                    |
+| Winning Number     | 로또와 동일한 형태의 숫자 집합으로, 당첨 순위를 결정하는 기준이 되는 당첨 번호 |
+| Bonus Number       | 당첨 번호와 별개로, 2등을 결정하는 보너스 번호                   |
+| Winning Statistics | 1등부터 5등까지 각 등수별 당첨 개수를 집계한 결과                 |
+| Yield              | 수익률 (로또 구매 비용과 당첨 상금을 비교하여 산출되는 정보)           |
 
 ### 돈
 
@@ -53,9 +53,10 @@
 | Cashier           | 사용자가 지불한 금액을 받고, LottoMachine을 통해 금액에 맞는 수량의 로또를 구매하는 객체 |
 | Lotto             | 6개의 LottoNumber를 가지는 로또                                  |
 | LottoNumber       | Lotto가 가지는 숫자 (1부터 45사이의 숫자)                             |
+| LottoNumbers      | Lotto가 가지는 숫자들 (중복 없는 6개의 LottoNumber)                   |
 | Rank              | Lotto의 번호와 Winning Number를 비교하여 결정되는 당첨 순위               |
 | Ticket            | 값 객체이며 Lotto Machine에게 전달하고 Lotto를 받아올 수 있는 돈을 담는 값 객체   |
-| WinningNumbers    | 6개의 LottoNumber와 1개의 BonusNumber를 같이 가지고 있으며 당첨의 기준이 됨   |
+| WinningNumbers    | LottoNumbers와 1개의 BonusNumber를 같이 가지고 있으며 당첨의 기준이 됨      |
 | WinningStatistics | 순위별 당첨 개수 정보를 가지는 당첨 통계 전송 객체                            |
 | LottoMachine      | 입력된 금액만큼 수량을 계산하여 그 수량만큼의 로또를 발행하는 객체                    |
 | InputParser       | 파싱 등 기초적인 유효성 검증을 하는 유틸 객체                               |
