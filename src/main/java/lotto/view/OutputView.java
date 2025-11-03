@@ -1,5 +1,7 @@
 package lotto.view;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import lotto.domain.dto.LottoNumbersDto;
 import lotto.domain.dto.RankResult;
@@ -39,7 +41,9 @@ public class OutputView {
         System.out.println("당첨 통계");
         System.out.println("---");
 
-        List<RankResult> rankResults = winningStatistics.toRankResults();
+        List<RankResult> rankResults = new ArrayList<>(winningStatistics.toRankResults());
+        Collections.reverse(rankResults);
+
         for (RankResult result : rankResults) {
             System.out.println(result.formatForPrint());
         }
