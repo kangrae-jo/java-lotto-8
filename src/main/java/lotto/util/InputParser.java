@@ -20,7 +20,6 @@ public class InputParser {
         try {
             return Arrays.stream(input.split(","))
                     .map(String::trim)
-                    .filter(string -> !string.isEmpty())
                     .map(Integer::parseInt)
                     .toList();
         } catch (NumberFormatException e) {
